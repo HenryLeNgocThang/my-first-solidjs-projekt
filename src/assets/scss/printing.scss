@@ -1,0 +1,45 @@
+:root {
+    --page-print-padding: 48px;
+}
+
+.printing {
+    @apply leading-[1.25] text-[10pt] bg-white text-black 
+    shadow-2xl border border-gray-200 m-auto w-[210mm] min-h-[297mm] h-auto
+    flex flex-col relative
+    ;
+
+    &:after {
+        content: "";
+        @apply h-0 border-t border-dashed border-gray-400 absolute top-[297mm] left-0 w-full
+        print:hidden
+        ;
+        page-break-after: always;
+        margin-top: var(--page-print-padding);
+    }
+}
+
+@media print {
+    :root {
+        color-scheme: light dark;
+    }
+
+    html,
+    body {
+        @apply p-0 m-0;
+    }
+
+    .printing {
+        @apply border-0 shadow-none m-auto;
+    }
+
+    button,
+    nav {
+        @apply hidden;
+    }
+}
+
+@page {
+    size: 210mm 297mm;
+    // margin: var(--page-print-padding) 0;
+    border: 0;
+}

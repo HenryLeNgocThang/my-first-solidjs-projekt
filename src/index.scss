@@ -1,0 +1,11 @@
+/* All css imports goes here. No need to insert css internal in html. */
+
+@import "./assets/scss/fonts.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    @import "./assets/scss/general.scss";
+}

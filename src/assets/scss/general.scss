@@ -1,0 +1,52 @@
+@layer base {
+    :root {
+      --primary: 255 102 0;
+      --secondary: 0 32 96;
+    }
+
+    body {
+      @apply p-12 font-body;
+    }
+    
+    h1, h2, h3 {
+        @apply font-head;
+    }
+
+    h1 {
+      @apply text-6xl;
+    }
+
+    h2 {
+      @apply text-4xl text-secondary;
+    }
+
+    h3 {
+      @apply text-lg text-secondary font-semibold;
+    }
+}
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-5 border-black border-2 border-solid bg-white text-black ease-in-out duration-300;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+      transform: translate3d(0, 2px, 0);
+    }
+    
+    &:focus {
+      box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+    }
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto w-full max-w-screen-sm lg:max-w-screen-md;
+  }
+}
